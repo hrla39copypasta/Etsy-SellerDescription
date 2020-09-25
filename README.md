@@ -1,1 +1,2 @@
-# Etsy-SellerDescription-
+# Etsy-SellerDescription
+
