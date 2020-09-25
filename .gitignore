@@ -1,3 +1,7 @@
+# Custom
+.DS_Store
+config/db.js
+
 # Logs
 logs
 *.log
