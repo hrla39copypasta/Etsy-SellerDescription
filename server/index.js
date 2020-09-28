@@ -8,8 +8,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use('/', express.static(path.join(__dirname, 'public')));
-
 // Get seller Info
 app.get('/api/seller/:id', (req, res) => {
   dbHelper.getSeller(req.params.id, (err, result) => {
@@ -24,6 +22,8 @@ app.get('/api/store/:id', (req, res) => {
     else res.status(200).json(result);
   });
 });
+
+app.use('/', express.static(path.join(__dirname, '../client/dist')));
 
 const PORT = 8004;
 app.listen(PORT, () => console.log(`LISTENING ON PORT ${PORT}`));
