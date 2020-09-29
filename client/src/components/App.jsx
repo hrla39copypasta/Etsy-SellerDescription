@@ -10,7 +10,11 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>hi</div>
+      <div className="hi">
+        <h1>hi</h1>
+        <h2>hello</h2>
+        <button className="test" type="submit">PUSH ME</button>
+      </div>
     );
   }
 }

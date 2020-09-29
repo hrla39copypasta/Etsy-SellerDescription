@@ -26,4 +26,5 @@ app.get('/api/store/:id', (req, res) => {
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
 
 const PORT = 8004;
+// eslint-disable-next-line no-console
 app.listen(PORT, () => console.log(`LISTENING ON PORT ${PORT}`));
