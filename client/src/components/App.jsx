@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
 import axios from 'axios';
+import Seller from './Seller.jsx';
+import ProductGrid from './ProductGrid.jsx';
 
 const Wrapper = styled.div`
 max-width: 1400px;
 background-color: #F8EBE6;
 margin: 0 auto;
+display: grid;
+grid-template-columns: 1fr 3fr;
+grid-template-rows: 1fr;
+gap: 0px 0px;
+grid-template-areas:
+  "seller items";
 `;
 
 export default class App extends Component {
@@ -43,10 +50,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <Wrapper className="hi">
-        <h1>hi</h1>
-        <h2>hello</h2>
-        <button className="test" type="submit">PUSH ME</button>
+      <Wrapper>
+        <Seller />
+        <ProductGrid />
       </Wrapper>
     );
   }
