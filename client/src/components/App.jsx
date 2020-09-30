@@ -4,6 +4,14 @@ import axios from 'axios';
 import Seller from './Seller.jsx';
 import ProductGrid from './ProductGrid.jsx';
 
+const Body = styled.div`
+background-color: #F8EBE6;
+margin: 0;
+font-family: 'Roboto', sans-serif;
+font-weight: 300;
+font-size: 13px;
+`;
+
 const Wrapper = styled.div`
 max-width: 1400px;
 background-color: #F8EBE6;
@@ -20,7 +28,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      seller: [],
+      seller: {},
       sellerProducts: [],
     };
     this.getSellers = this.getSellers.bind(this);
@@ -32,14 +40,16 @@ export default class App extends Component {
     this.getSellerProducts();
   }
 
+  // Get seller and seller store data
   getSellers() {
     axios.get('/api/seller/1')
       .then((result) => this.setState({
-        seller: result.data,
+        seller: result.data[0],
       }))
       .catch((err) => console.error(err));
   }
 
+  // Get all products on sale by seller
   getSellerProducts() {
     axios.get('/api/store/1')
       .then((result) => this.setState({
@@ -49,11 +59,14 @@ export default class App extends Component {
   }
 
   render() {
+    const { seller, sellerProducts } = this.state;
     return (
-      <Wrapper>
-        <Seller />
-        <ProductGrid />
-      </Wrapper>
+      <Body>
+        <Wrapper>
+          <Seller seller={seller} />
+          <ProductGrid sellerProducts={sellerProducts} />
+        </Wrapper>
+      </Body>
     );
   }
 }

@@ -1,14 +1,25 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 
 const Block = styled.div`
-  background-color: white;
-`;
+  margin-right: 24px;
 
-const InfoBlock = () => (
+  .title {
+    margin: 0 0 6px 0;
+  }
+
+  .data {
+    font-size: 26px;
+    margin: 0;
+    font-family: 'Piazzolla', serif;
+  }
+  `;
+
+const InfoBlock = ({ title, data }) => (
   <Block>
-    <p>Wahoo</p>
-    <p>442</p>
+    <p className="title">{title}</p>
+    <p className="data">{data}</p>
   </Block>
 );
 
