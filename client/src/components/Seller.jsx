@@ -8,11 +8,10 @@ const Container = styled.div`
 `;
 
 const StoreContainer = styled.div`
-
   .more-info {
     margin-bottom: 6px;
     font-size: 13px;
-    line-height: 183rd px;
+    line-height: 18 px;
   }
 `;
 
