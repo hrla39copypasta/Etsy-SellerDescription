@@ -5,8 +5,8 @@ import React from 'react';
 
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import App from '../client/src/components/App.jsx';
-import axios from 'axios';
+import App from './App.jsx';
+import Sellegitr from './Seller.jsx';
 
 configure({ adapter: new Adapter() });
 
@@ -16,8 +16,11 @@ describe('<App />', () => {
     wrapper = shallow(<App />);
   });
   it('renders one App Component', () => {
-    wrapper = shallow(<App />);
     // expect(wrapper.contains(<div>)).toBe(true);
     console.log(wrapper.debug());
+  });
+
+  it('renders one <App /> component', () => {
+    expect(wrapper.find(Seller)).toHaveLength(1);
   });
 });

@@ -16,8 +16,9 @@ const Wrapper = styled.div`
 max-width: 1400px;
 background-color: #F8EBE6;
 margin: 0 auto;
+padding: 24px 30px 48px 30px;
 display: grid;
-grid-template-columns: 1fr 3fr;
+grid-template-columns: 1fr 4fr;
 grid-template-rows: 1fr;
 gap: 0px 0px;
 grid-template-areas:
