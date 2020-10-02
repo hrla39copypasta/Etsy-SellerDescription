@@ -6,6 +6,10 @@ const ProductContainer = styled.div`
   grid-area: items;
   display: flex;
   flex-wrap: wrap;
+
+  // @media (max-width: 899px) {
+
+  // }
 `;
 
 const ProductGrid = ({ sellerProducts }) => (

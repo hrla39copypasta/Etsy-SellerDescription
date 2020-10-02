@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import { FiArrowRight } from 'react-icons/fi';
 import InfoBlock from './InfoBlock.jsx';
 
-
-
 const Container = styled.div`
   grid-area: seller;
 `;
