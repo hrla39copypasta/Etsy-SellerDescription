@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -5,6 +7,7 @@ const Container = styled.div`
   padding: 10px;
   flex-grow: 4;
   max-width: 240px;
+  transition: all 200ms ease-in-out;
 
   &:hover {
     background-color: white;
@@ -44,14 +47,20 @@ const Container = styled.div`
   }
 `;
 
-const Product = () => (
+const Product = ({ product }) => (
   <Container>
-    <img src="https://picsum.photos/400" alt="seller product" />
+    <img src={product.product_image} alt="seller product" />
     <h3>
-      <a href="#">Custom Horse Portrait, So Pretty</a>
+      <a href="#">{product.product_name}</a>
     </h3>
-    <p className="sd_price">$29.99</p>
-    <span className="sd_freeShipping">FREE shipping</span>
+    <p className="sd_price">
+      ${product.product_price}
+    </p>
+    {
+      product.is_free_shipping === 1
+        ? <span className="sd_freeShipping">FREE shipping</span>
+        : null
+    }
   </Container>
 );
 

@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
+import { FiArrowRight } from 'react-icons/fi';
 import InfoBlock from './InfoBlock.jsx';
+
+
 
 const Container = styled.div`
   grid-area: seller;
@@ -28,6 +31,19 @@ const SeeAllItems = styled.a`
   cursor: pointer;
   line-height: 0;
   font-weight: bold;
+
+  .sd_arrow {
+    font-size: 16px;
+    margin-left: 6px;
+    position: relative;
+    top: 4px;
+    left: 0px;
+    transition: left 200ms ease-in-out;
+  }
+
+  .sd_arrow:hover {
+    left: 6px;
+  }
 `;
 
 const StoreName = styled.h2`
@@ -70,7 +86,10 @@ const Seller = ({ seller }) => (
         </StoreLink>
       </StoreName>
       <br />
-      <SeeAllItems href="#">See all 10 items</SeeAllItems>
+      <SeeAllItems href="#">
+        See all 10 items
+        <FiArrowRight className="sd_arrow" />
+      </SeeAllItems>
     </StoreContainer>
 
     <MoreInfoContainer>

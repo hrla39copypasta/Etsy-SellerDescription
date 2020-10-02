@@ -8,16 +8,13 @@ const ProductContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-const ProductGrid = () => (
+const ProductGrid = ({ sellerProducts }) => (
   <ProductContainer>
-    <Product />
-    <Product />
-    <Product />
-    <Product />
-    <Product />
-    <Product />
-    <Product />
-    <Product />
+    {
+      sellerProducts.map((product, index) => (
+        <Product product={product} />
+      ))
+    }
   </ProductContainer>
 );
 

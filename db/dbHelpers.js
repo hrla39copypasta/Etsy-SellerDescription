@@ -23,7 +23,7 @@ const getSeller = (id, callback) => {
 };
 
 const getSellerProducts = (id, callback) => {
-  const queryStr = `SELECT * FROM stores, products WHERE stores.id=products.store_id AND stores.id=${id}`;
+  const queryStr = `SELECT * FROM stores, products WHERE stores.id=products.store_id AND stores.id=${id} LIMIT 8`;
   db.query(queryStr, (err, result) => {
     if (err) callback(err);
     else callback(null, result);
