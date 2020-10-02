@@ -5,23 +5,34 @@ import Seller from './Seller.jsx';
 import ProductGrid from './ProductGrid.jsx';
 
 const Body = styled.div`
-background-color: #F8EBE6;
-margin: 0;
-font-family: 'Roboto', sans-serif;
-font-weight: 300;
-font-size: 13px;
+  background-color: #F8EBE6;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
 `;
 
 const Wrapper = styled.div`
-max-width: 1400px;
-background-color: #F8EBE6;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr 3fr;
-grid-template-rows: 1fr;
-gap: 0px 0px;
-grid-template-areas:
-  "seller items";
+  max-width: 1400px;
+  background-color: #F8EBE6;
+  margin: 0 auto;
+  padding: 24px 30px 48px 30px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "seller items";
+
+  @media (max-width: 899px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "seller"
+      "items";
+
+  }
 `;
 
 export default class App extends Component {

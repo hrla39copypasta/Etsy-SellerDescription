@@ -1,15 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
+import Product from './Product.jsx';
 
 const ProductContainer = styled.div`
-  background-color: cyan;
   grid-area: items;
+  display: flex;
+  flex-wrap: wrap;
+
+  // @media (max-width: 899px) {
+
+  // }
 `;
 
-const ProductGrid = () => (
+const ProductGrid = ({ sellerProducts }) => (
   <ProductContainer>
-    <h2>i am product container</h2>
-    <p>moomoo</p>
+    {
+      sellerProducts.map((product, index) => (
+        <Product product={product} />
+      ))
+    }
   </ProductContainer>
 );
 
