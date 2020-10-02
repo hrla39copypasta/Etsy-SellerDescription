@@ -5,6 +5,7 @@ import { FaHandPaper, FaTruck, FaBox } from 'react-icons/fa';
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 20px;
 
   p:last-child {
     margin: 6px auto 0 auto;

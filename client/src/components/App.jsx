@@ -26,6 +26,19 @@ const EstimatedArrival = styled.div`
   }
 `;
 
+const ShippingInfo = styled.div`
+  display: flex;
+
+  div {
+    width: 50%;
+  }
+
+  div > p:nth-child(2) {
+    font-size: 24px;
+    margin: 0;
+  }
+`;
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -45,6 +58,18 @@ export default class App extends Component {
 
         {/* Delivery Time line */}
         <DeliveryTimeline />
+
+        <ShippingInfo>
+          <div>
+            <p>Cost to ship</p>
+            <p>Free</p>
+          </div>
+          <div>
+            <p>Returns & exchanges</p>
+            <p>Accepted</p>
+            <span>Exceptions may apply</span>
+          </div>
+        </ShippingInfo>
 
       </Container>
     );
