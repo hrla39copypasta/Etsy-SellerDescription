@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import DeliveryTimeline from './DeliveryTimeline.jsx';
+import DeliverToCountry from './DeliverToCountry.jsx';
+import PoliciesBtn from './PoliciesBtn.jsx';
+import SellerInfo from './SellerInfo.jsx';
 
 const Container = styled.div`
   font-family: 'Roboto', sans-serif;
@@ -71,6 +74,13 @@ export default class App extends Component {
           </div>
         </ShippingInfo>
 
+        <DeliverToCountry />
+
+        {/* View Shop Policies */}
+        <PoliciesBtn />
+
+        {/* Meet your seller */}
+        <SellerInfo />
       </Container>
     );
   }
