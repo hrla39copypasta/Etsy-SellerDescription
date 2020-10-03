@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { RiLockFill } from 'react-icons/ri';
 import paypal from '../../paypal.jpeg';
@@ -83,69 +83,90 @@ const Payments = styled.div`
   }
 `;
 
-const PolicyModal = ({ toggleModal }) => (
-  <Overlay>
-    <Modal>
-      <button type="button" onClick={toggleModal}>X</button>
-      {/* TODO: update store name to be dynamic */}
-      <h2>Shop policies for VanWoof</h2>
-      <p>Last updated on May 17, 2020</p>
+const PolicyModal = ({ toggleModal }) => {
+  const useOutsideModal = (ref) => {
+    useEffect(() => {
+      // toggle modal if clicked outside of element
+      const handleClickOutside = (e) => {
+        if (ref.current && !ref.current.contains(e.target)) {
+          toggleModal();
+        }
+      };
 
-      <h3>Returns & exchanges</h3>
+      // bind  the event listener
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        // unbind the event listener on clean up
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, [ref]);
+  };
+  const wrapperRef = useRef(null);
+  useOutsideModal(wrapperRef);
+  return (
+    <Overlay>
+      <Modal ref={wrapperRef}>
+        <button type="button" onClick={toggleModal}>X</button>
+        {/* TODO: update store name to be dynamic */}
+        <h2>Shop policies for VanWoof</h2>
+        <p>Last updated on May 17, 2020</p>
 
-      <Section>
-        <h3>Urna neque viverra justo nec</h3>
-        <p>Magna fermentum iaculis: 14 diam phasellus </p>
-        <p>Donec ac odio tempor: 30 diam phasellus </p>
-      </Section>
-      <Section>
-        <h3>Lorem ipsum dolor sit amet</h3>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
-      </Section>
-      <Section>
-        <h3>Laoreet id donec ultrices tincidunt arcu non sodales</h3>
-        <p>
-          UUt etiam sit amet nisl purus in mollis. Amet consectetur adipiscing
-          elit ut aliquam. Id aliquet lectus proin nibh.
+        <h3>Returns & exchanges</h3>
+
+        <Section>
+          <h3>Urna neque viverra justo nec</h3>
+          <p>Magna fermentum iaculis: 14 diam phasellus </p>
+          <p>Donec ac odio tempor: 30 diam phasellus </p>
+        </Section>
+        <Section>
+          <h3>Lorem ipsum dolor sit amet</h3>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+        </Section>
+        <Section>
+          <h3>Laoreet id donec ultrices tincidunt arcu non sodales</h3>
+          <p>
+            UUt etiam sit amet nisl purus in mollis. Amet consectetur adipiscing
+            elit ut aliquam. Id aliquet lectus proin nibh.
         </p>
-        <ul>
-          <li>Blandit libero volutpat </li>
-          <li>Sit amet nisl suscipit</li>
-          <li>Mi tempus imperdiet nulla</li>
-          <li>Elit scelerisque mauris</li>
-        </ul>
-      </Section>
-      <Section>
-        <h3>Magna fermentum iaculis</h3>
-        <p>
-          At tempor commodo ullamcorper a lacus vestibulum sed arcu.
-          Amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus.
+          <ul>
+            <li>Blandit libero volutpat </li>
+            <li>Sit amet nisl suscipit</li>
+            <li>Mi tempus imperdiet nulla</li>
+            <li>Elit scelerisque mauris</li>
+          </ul>
+        </Section>
+        <Section>
+          <h3>Magna fermentum iaculis</h3>
+          <p>
+            At tempor commodo ullamcorper a lacus vestibulum sed arcu.
+            Amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus.
         </p>
-      </Section>
+        </Section>
 
-      <Payments>
-        <h3>Payments</h3>
-        <p className="sd_payment">
-          <span><RiLockFill /></span>
+        <Payments>
+          <h3>Payments</h3>
+          <p className="sd_payment">
+            <span><RiLockFill /></span>
           Secure options
         </p>
 
-        <div>
-          <img src={paypal} alt="paypal" />
-          <img src={mastercard} alt="mastercard" />
-          <img src={visa} alt="visa" />
-          <img src={discover} alt="discover" />
-          <img src={greenGiftCard} alt="green gift card" />
-        </div>
-        <p>Id volutpat lacus laoreet non curabitur</p>
-        <p>
-          Getsy viverra adipiscing at in tellus integer.
-          Venenatis cras sed felis eget velit aliquet sagittis
+          <div>
+            <img src={paypal} alt="paypal" />
+            <img src={mastercard} alt="mastercard" />
+            <img src={visa} alt="visa" />
+            <img src={discover} alt="discover" />
+            <img src={greenGiftCard} alt="green gift card" />
+          </div>
+          <p>Id volutpat lacus laoreet non curabitur</p>
+          <p>
+            Getsy viverra adipiscing at in tellus integer.
+            Venenatis cras sed felis eget velit aliquet sagittis
         </p>
-      </Payments>
+        </Payments>
 
-    </Modal>
-  </Overlay>
-);
+      </Modal>
+    </Overlay>
+  )
+};
 
 export default PolicyModal;
