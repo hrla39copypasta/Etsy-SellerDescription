@@ -17,12 +17,17 @@ const Wrapper = styled.div`
   .sd_input {
     border: 1px solid #EEEEEE;
     width: 100%;
-    padding: 10px 4px 10px 4px;
+    padding: 10px 4px 10px 12px;
     font-size: 16px;
     font-weight: 300;
     border-radius: 5px;
     border-shadow: 0 1px 12px 0 rgba(34, 34, 34, 0.2);
     margin: 10px auto;
+    outline: none;
+  }
+
+  .sd_input:focus {
+    border-color: black;
   }
 
   .sd_input:hover {

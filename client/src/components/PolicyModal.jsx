@@ -127,7 +127,7 @@ const PolicyModal = ({ toggleModal }) => {
           <p>
             UUt etiam sit amet nisl purus in mollis. Amet consectetur adipiscing
             elit ut aliquam. Id aliquet lectus proin nibh.
-        </p>
+          </p>
           <ul>
             <li>Blandit libero volutpat </li>
             <li>Sit amet nisl suscipit</li>
@@ -140,15 +140,15 @@ const PolicyModal = ({ toggleModal }) => {
           <p>
             At tempor commodo ullamcorper a lacus vestibulum sed arcu.
             Amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus.
-        </p>
+          </p>
         </Section>
 
         <Payments>
           <h3>Payments</h3>
           <p className="sd_payment">
             <span><RiLockFill /></span>
-          Secure options
-        </p>
+            Secure options
+          </p>
 
           <div>
             <img src={paypal} alt="paypal" />
@@ -161,12 +161,12 @@ const PolicyModal = ({ toggleModal }) => {
           <p>
             Getsy viverra adipiscing at in tellus integer.
             Venenatis cras sed felis eget velit aliquet sagittis
-        </p>
+          </p>
         </Payments>
 
       </Modal>
     </Overlay>
-  )
+  );
 };
 
 export default PolicyModal;
