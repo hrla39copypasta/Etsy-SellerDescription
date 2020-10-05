@@ -36,12 +36,13 @@ export default class PoliciesBtn extends Component {
 
   render() {
     const { showModal } = this.state;
+    const { storeName } = this.props;
     return (
       <div>
         <ShopPoliciesBtn type="button" onClick={this.toggleModal}>View shop policies</ShopPoliciesBtn>
         {
           showModal
-            ? <PolicyModal toggleModal={this.toggleModal} />
+            ? <PolicyModal storeName={storeName} toggleModal={this.toggleModal} />
             : null
         }
       </div>

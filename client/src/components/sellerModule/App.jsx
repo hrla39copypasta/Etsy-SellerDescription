@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ReactTooltip from 'react-tooltip';
+import axios from 'axios';
 import DeliveryTimeline from './DeliveryTimeline.jsx';
 import DeliverToCountry from './DeliverToCountry.jsx';
 import PoliciesBtn from './PoliciesBtn.jsx';
@@ -58,11 +59,25 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      sellerData: {},
     };
+    this.getData = this.getData.bind(this);
+  }
+
+  componentDidMount() {
+    this.getData();
+  }
+
+  getData() {
+    axios.get('/api/seller/1')
+      .then((result) => this.setState({
+        sellerData: result.data[0],
+      }))
+      .catch((err) => console.error(err));
   }
 
   render() {
+    const { sellerData } = this.state;
     return (
       <Container>
         <ReactTooltip
@@ -110,10 +125,14 @@ export default class App extends Component {
         <DeliverToCountry />
 
         {/* View Shop Policies */}
-        <PoliciesBtn />
+        <PoliciesBtn storeName={sellerData.store_name} />
 
         {/* Meet your seller */}
-        <SellerInfo />
+        <SellerInfo
+          firstName={sellerData.first_name}
+          lastName={sellerData.last_name}
+          storeName={sellerData.store_name}
+        />
       </Container>
     );
   }

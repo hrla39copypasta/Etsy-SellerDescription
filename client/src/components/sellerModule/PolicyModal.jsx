@@ -83,7 +83,7 @@ const Payments = styled.div`
   }
 `;
 
-const PolicyModal = ({ toggleModal }) => {
+const PolicyModal = ({ toggleModal, storeName }) => {
   const useOutsideModal = (ref) => {
     useEffect(() => {
       // toggle modal if clicked outside of element
@@ -108,7 +108,10 @@ const PolicyModal = ({ toggleModal }) => {
       <Modal ref={wrapperRef}>
         <button type="button" onClick={toggleModal}>X</button>
         {/* TODO: update store name to be dynamic */}
-        <h2>Shop policies for VanWoof</h2>
+        <h2>
+          Shop policies for&nbsp;
+          { storeName }
+        </h2>
         <p>Last updated on May 17, 2020</p>
 
         <h3>Returns & exchanges</h3>

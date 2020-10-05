@@ -68,21 +68,33 @@ export default class SellerInfo extends Component {
 
   render() {
     const { messageModal } = this.state;
+    const { firstName, lastName, storeName } = this.props;
     return (
       <div>
         <p>Meet your seller</p>
         <Seller>
           <img src="https://picsum.photos/200" alt="seller" />
           <div>
-            <p className="sd_sellerName">Luke Emery</p>
+            <p className="sd_sellerName">
+              {firstName}
+              &nbsp;
+              {lastName}
+            </p>
             <p className="sd_ownerText">
               Owner of&nbsp;
-              <a href="#">Vanwoof</a>
+              <a href="#">
+                {storeName}
+              </a>
             </p>
           </div>
         </Seller>
 
-        <MessageButton onClick={this.toggleModal} type="button">Message Luke Emery</MessageButton>
+        <MessageButton onClick={this.toggleModal} type="button">
+          Message&nbsp;
+          {firstName}
+          &nbsp;
+          {lastName}
+        </MessageButton>
         {
           messageModal
             ? <SignInModal toggleModal={this.toggleModal} />
