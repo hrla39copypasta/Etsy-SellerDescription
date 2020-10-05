@@ -2,19 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  button {
-    background: white;
-    border: none;
-    padding: 15px;
-    outline: none;
-  }
-
-  button:hover {
-    cursor: pointer;
-    background: #EEEEEE;
-    border-radius: 20px;
-  }
-
   .sd_input {
     border: 1px solid #EEEEEE;
     width: 100%;
@@ -33,6 +20,40 @@ const Wrapper = styled.div`
 
   .sd_input:hover {
     border: 1px solid black;
+  }
+`;
+
+const DeliverToBtn = styled.button`
+  background-color: #FFFFFF;
+  border: none;
+  font-weight: 400;
+  margin: 32px 0 32px -10px;
+  outline: none;
+  cursor: pointer;
+
+
+  div {
+  position: absolute;
+  width: 200px;
+  height: 30px;
+  border-radius: 25px;
+  transform: scale(0);
+  transition: all 450ms ease 0ms;
+  padding: 5px;
+  }
+
+  &:hover > div {
+    background: #EEEEEE;
+    transform: scale(1);
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  }
+
+  span {
+    position: relative;
+    padding: 7px;
+    line-height: 30px;
+    left: 3px;
+    top: 4px;
   }
 `;
 
@@ -56,7 +77,10 @@ export default class DeliverToCountry extends Component {
     const { showForm } = this.state;
     return (
       <Wrapper>
-        <button onClick={this.toggleForm} type="button">Deliver to United States, 90706</button>
+        <DeliverToBtn onClick={this.toggleForm} type="button">
+          <div />
+          <span>Deliver to United States, 90706</span>
+        </DeliverToBtn>
         {
           showForm
             ? (
