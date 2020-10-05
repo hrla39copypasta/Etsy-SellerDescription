@@ -6,6 +6,7 @@ const Wrapper = styled.div`
     background: white;
     border: none;
     padding: 15px;
+    outline: none;
   }
 
   button:hover {

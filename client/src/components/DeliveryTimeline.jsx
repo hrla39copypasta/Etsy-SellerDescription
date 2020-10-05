@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactTooltip from 'react-tooltip';
 import { FaHandPaper, FaTruck, FaBox } from 'react-icons/fa';
 
 const Wrapper = styled.div`
@@ -60,7 +61,20 @@ const HorizontalLine = styled.div`
 
 const DeliveryTimeline = () => (
   <Wrapper>
-    <DeliveryBox>
+    <ReactTooltip
+      id="sd_deliverytimeline"
+      effect="solid"
+      multiline="true"
+      backgroundColor="white"
+      textColor="black"
+      place="bottom"
+      border="true"
+      borderColor="black"
+    />
+    <DeliveryBox
+      data-for="sd_deliverytimeline"
+      data-tip="After you place your order, <br/> VanWoof will take 2-7 business <br/> days to prepare it for shipment."
+    >
       <div className="sd_icon_line">
         <FaHandPaper className="sd_ship_icon" />
         <HorizontalLine width="100" className="sd_left_line" />
@@ -69,7 +83,11 @@ const DeliveryTimeline = () => (
       <p className="sd_dotted_text">Order placed</p>
     </DeliveryBox>
 
-    <DeliveryBox className="sd_ships">
+    <DeliveryBox
+      data-for="sd_deliverytimeline"
+      className="sd_ships"
+      data-tip="VanWoof puts your order in the mail."
+    >
       <div className="sd_icon_line">
         <HorizontalLine width="45" />
         <FaTruck className="sd_ship_icon" />
@@ -79,7 +97,11 @@ const DeliveryTimeline = () => (
       <p className="sd_dotted_text">Order Ships</p>
     </DeliveryBox>
 
-    <DeliveryBox className="sd_delivered">
+    <DeliveryBox
+      data-for="sd_deliverytimeline"
+      className="sd_delivered"
+      data-tip="Estimated to arrive <br/>at your doorstep Oct 7-20!"
+    >
       <div className="sd_icon_line">
         <HorizontalLine width="100" className="sd_right_line" />
         <FaBox className="sd_ship_icon" />

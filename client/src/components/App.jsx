@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import ReactTooltip from 'react-tooltip';
 import DeliveryTimeline from './DeliveryTimeline.jsx';
 import DeliverToCountry from './DeliverToCountry.jsx';
 import PoliciesBtn from './PoliciesBtn.jsx';
@@ -13,7 +14,7 @@ const Container = styled.div`
   margin: 0 auto;
 
   .sd_dotted_text {
-    border-bottom: 1px dotted black;
+    border-bottom: 2px dotted black;
     display: inline-block;
   }
 `;
@@ -21,6 +22,7 @@ const Container = styled.div`
 const EstimatedArrival = styled.div`
   p:first-child {
     margin: 0 auto;
+    cursor: help;
   }
 
   p:last-child {
@@ -42,6 +44,16 @@ const ShippingInfo = styled.div`
   }
 `;
 
+const PopupBubble = styled.span`
+  width: 250px;
+  display: block;
+  border: 1px solid red;
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  left: 150px;
+`;
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -53,9 +65,30 @@ export default class App extends Component {
   render() {
     return (
       <Container>
+        <ReactTooltip
+          // Estimated Arrival Tooltip
+          id="sd_estimatedArrival"
+          effect="solid"
+          multiline="true"
+          backgroundColor="white"
+          textColor="black"
+          place="bottom"
+          offset="{'right': 175}"
+          border="true"
+          borderColor="black"
+        />
         {/* Estimated arrival */}
         <EstimatedArrival>
-          <p className="dotted_text">Estimated Arrival</p>
+          <p
+            data-tip="This is an estimate based on purchase date,<br/> the seller's locationand processing time,<br/>
+            and the shipping destination and carrier.
+            <br/>
+            Other factors—like placing an order on a <br/> weekend or a holiday—may push the arrival <br/> of your item beyond this date."
+            className="sd_dotted_text"
+            data-for="sd_estimatedArrival"
+          >
+            Estimated Arrival
+          </p>
           <p>Oct 7-20</p>
         </EstimatedArrival>
 
@@ -64,7 +97,7 @@ export default class App extends Component {
 
         <ShippingInfo>
           <div>
-            <p>Cost to ship</p>
+            <p data-tip="asdfsf">Cost to ship</p>
             <p>Free</p>
           </div>
           <div>
