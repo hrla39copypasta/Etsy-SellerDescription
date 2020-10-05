@@ -10,8 +10,8 @@ const Container = styled.div`
   font-family: 'Roboto', sans-serif;
   font-size: 13px;
   font-weight: 300;
-  max-width: 1024px;
-  margin: 0 auto;
+  max-width: 600px;
+  margin: 0 0 0 auto;
 
   .sd_dotted_text {
     border-bottom: 2px dotted black;

@@ -1,11 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { RiLockFill } from 'react-icons/ri';
-import paypal from '../../paypal.jpeg';
-import mastercard from '../../mastercard.jpg';
-import visa from '../../visa.jpg';
-import discover from '../../discover.jpg';
-import greenGiftCard from '../../greengiftcard.jpg';
+import paypal from '../../../paypal.jpeg';
+import mastercard from '../../../mastercard.jpg';
+import visa from '../../../visa.jpg';
+import discover from '../../../discover.jpg';
+import greenGiftCard from '../../../greengiftcard.jpg';
 
 const Overlay = styled.div`
   background: rgba(34, 34, 34, 0.65);
