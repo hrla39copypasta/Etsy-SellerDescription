@@ -12,6 +12,7 @@ const Wrapper = styled.div`
     border-shadow: 0 1px 12px 0 rgba(34, 34, 34, 0.2);
     margin: 10px auto;
     outline: none;
+    transition: all 350ms ease;
   }
 
   .sd_input:focus {

@@ -22,6 +22,7 @@ const Seller = styled.div`
 
   .sd_ownerText > a {
     color: #595959;
+    transition: all 300ms ease;
   }
 
   .sd_ownerText > a:hover {
@@ -39,9 +40,12 @@ const MessageButton = styled.button`
   border-radius: 30px;
   font-size: 16px;
   outline: none;
+  transition: all 150ms ease;
 
   &:hover {
     cursor: pointer;
+    transform: scale(1.02);
+    box-shadow: 0 1px 12px 0 rgba(34,34,34,0.2);
   }
 `;
 
