@@ -12,7 +12,6 @@ const Container = styled.div`
   font-size: 13px;
   font-weight: 300;
   max-width: 600px;
-  margin: 0 0 0 auto;
 
   .sd_dotted_text {
     border-bottom: 2px dotted black;
