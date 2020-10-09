@@ -131,6 +131,7 @@ export default class App extends Component {
           firstName={sellerData.first_name}
           lastName={sellerData.last_name}
           storeName={sellerData.store_name}
+          sellerImage={sellerData.store_image}
         />
       </Container>
     );
