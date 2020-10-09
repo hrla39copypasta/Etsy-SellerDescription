@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import SignInModal from './SignInModal.jsx';
@@ -72,12 +73,17 @@ export default class SellerInfo extends Component {
 
   render() {
     const { messageModal } = this.state;
-    const { firstName, lastName, storeName } = this.props;
+    const {
+      firstName,
+      lastName,
+      storeName,
+      sellerImage,
+    } = this.props;
     return (
       <div>
         <p>Meet your seller</p>
         <Seller>
-          <img src="https://picsum.photos/200" alt="seller" />
+          <img src={sellerImage} alt="seller" />
           <div>
             <p className="sd_sellerName">
               {firstName}
