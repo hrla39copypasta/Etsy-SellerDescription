@@ -6,6 +6,14 @@ This is the seller description module of the mockup of popular e-commerce websit
 ## Demo
 ![Getsy Demo](https://media.giphy.com/media/M95NBzPUDTPwpKnnKy/giphy.gif)
 
+## Tech-Stack
+<ul>
+  <li>React</li>
+  <li>Node.js</li>
+  <li>Express</li>
+  <li>MySQL</li>
+</ul>
+
 ## How to populate the database
 1. If you haven't yet, run `npm install` in the terminal in the root directory.
 2. Go to the config directory and fill in your login info for mysql. Then change the file name from `db.example.js` to `db.js`
