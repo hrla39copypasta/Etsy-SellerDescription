@@ -1,5 +1,11 @@
 # Etsy-SellerDescription
 
+## Description
+This is the seller description module of the mockup of popular e-commerce website Etsy.com. This project uses software-oriented architecture to combine independent modules with their own server & database into one application.
+
+## Demo
+![Getsy Demo](https://media.giphy.com/media/M95NBzPUDTPwpKnnKy/giphy.gif)
+
 ## How to populate the database
 1. If you haven't yet, run `npm install` in the terminal in the root directory.
 2. Go to the config directory and fill in your login info for mysql. Then change the file name from `db.example.js` to `db.js`
