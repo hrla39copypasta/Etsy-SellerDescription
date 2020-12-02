@@ -46,8 +46,8 @@ This is the seller description module of the mockup of popular e-commerce websit
 </details>
 
 <details>
-<summary>Seller Store and Related Items</summary>
+<summary>Seller Store & Related Items</summary>
 <br>
 
-![demo gif](https://media.giphy.com/media/7VhFwLDcuyr24AFyv0/giphy.gif)
+![demo gif](https://media.giphy.com/media/Gq9TD5Py840rYYecZg/giphy.gif)
 </details>
