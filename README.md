@@ -3,8 +3,7 @@
 ## Description
 This is the seller description module of the mockup of popular e-commerce website Etsy.com. This project uses software-oriented architecture to combine independent modules with their own server & database into one application.
 
-## Demo
-![Getsy Demo](https://media.giphy.com/media/M95NBzPUDTPwpKnnKy/giphy.gif)
+![Getsy Screenshot](https://res.cloudinary.com/alvindelito/image/upload/c_scale,w_600/v1605631149/getsy-displayPicture_ewmhpk.jpg)
 
 ## Tech-Stack
 <ul>
@@ -22,3 +21,33 @@ This is the seller description module of the mockup of popular e-commerce websit
 
 ## Starting the Server
 1. In the root directory, type `npm run start`
+
+## Video Demo:
+
+<details>
+<summary>Navbar & Product Display</summary>
+<br>
+
+![demo gif](https://media.giphy.com/media/4nyPWZ6zVIiU8mmpCw/giphy.gif)
+</details>
+
+<details>
+<summary>Reviews</summary>
+<br>
+
+![demo gif](https://media.giphy.com/media/FOxZsGkX9TmiGB41fr/giphy.gif)
+</details>
+
+<details>
+<summary>Shipping & Seller Info</summary>
+<br>
+
+![demo gif](https://media.giphy.com/media/5AdWTLZKGAK4ptCjji/giphy.gif)
+</details>
+
+<details>
+<summary>Seller Store & Related Items (Click link to view)</summary>
+<br>
+
+[demo gif](https://media.giphy.com/media/Gq9TD5Py840rYYecZg/giphy.gif)
+</details>
